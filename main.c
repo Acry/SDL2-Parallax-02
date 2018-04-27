@@ -262,6 +262,8 @@ void assets_in(void)
 	foreground_src.x=0;
 	foreground_src.y=0;
 	//END 	FOREGROUND
+	
+	SDL_FreeSurface(temp_surface);
 }
 
 void assets_out(void)
