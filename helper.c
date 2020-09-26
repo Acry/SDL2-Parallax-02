@@ -1,3 +1,4 @@
+#pragma GCC diagnostic ignored "-Wunknown-pragmas"
 #include "helper.h"
 SDL_Window   	*Window=NULL;
 SDL_Renderer 	*Renderer=NULL;
@@ -11,15 +12,15 @@ TTF_Init();
 
 Window = SDL_CreateWindow("", 0, 0, 0, 0, SDL_WINDOW_HIDDEN);
 
-//BEGIN ICON
+#pragma region ICON
 SDL_Surface *icon;
-icon_font=TTF_OpenFont("./fontawesome-webfont.ttf", 50);
+icon_font=TTF_OpenFont("./assets/fontawesome-webfont.ttf", 50);
 SDL_Color font_color_icon = {255,255,255,255};
 icon=TTF_RenderGlyph_Blended(icon_font, 0xf17b , font_color_icon);
 SDL_SetWindowIcon(Window, icon);
 SDL_FreeSurface(icon);
 TTF_CloseFont(icon_font);
-//END ICON
+#pragma endregion ICON
 
 Renderer = SDL_CreateRenderer(Window, -1, SDL_RENDERER_ACCELERATED | SDL_RENDERER_PRESENTVSYNC);
 
